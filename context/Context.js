@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 
 export const TaskContext = createContext();
 

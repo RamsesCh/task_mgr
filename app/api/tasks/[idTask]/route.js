@@ -5,8 +5,9 @@ import Task from "@/app/models/Task.js";
 export async function PUT(request, { params }) {
     try {
         await dbConection();
+        const { idTask } = await params;
         const data = await request.json();
-        const newData = await Task.findOneAndUpdate({ _id: params.idTask }, data, {
+        const newData = await Task.findOneAndUpdate({ _id: idTask }, data, {
             new: true
         });
 
@@ -24,7 +25,8 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
     try {
         await dbConection();
-        const task = await Task.findOneAndDelete({ _id: params.idTask });
+        const { idTask } = await params;
+        const task = await Task.findOneAndDelete({ _id: idTask });
         return NextResponse.json({
             data: task,
         });
