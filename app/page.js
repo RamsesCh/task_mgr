@@ -2,7 +2,7 @@
 
 import TaskCard from '@/components/TaskCard';
 import AddTask from '@/components/AddTask';
-import { useTasks } from '@/context/context';
+import { useTasks } from '../context/Context.js';
 
 
 function HomePage() {

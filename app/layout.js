@@ -1,6 +1,6 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar"; "@/components/NavBar";
-import { TaskProvider } from '@/context/context';
+import { TaskProvider } from '../context/Context.js';
 
 export const metadata = {
   title: "TaskMgr",

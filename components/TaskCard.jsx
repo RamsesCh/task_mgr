@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FaRegCalendarCheck, FaPencilAlt, FaTrashAlt, FaCheckCircle } from "react-icons/fa";
-import { useTasks } from '@/context/context';
+import { useTasks } from '../context/Context.js';
 
 function TaskCard({ task }) {
 
