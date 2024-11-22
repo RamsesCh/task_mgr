@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <NavBar />
         <TaskProvider>
-          <div className="container mx-auto h-screen w-1/2 py-5">
+          <div className="container sm:mx-0 sm:w-full md:w-3/4 md:mx-auto lg:w-1/2 xl:w-1/2 py-5">
             {children}
           </div>
         </TaskProvider>

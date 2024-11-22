@@ -32,7 +32,7 @@ function TaskCard({ task }) {
       {isEditing ? (
         <input value={description} onChange={(e) => setDescription(e.target.value)} id="desc" type="text" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-3/5 p-2" placeholder="Descripcion de la tarea" required />
       ) : (
-        <h3 className="font-bold capitalize flex items-center"><FaRegCalendarCheck className="me-3" />{task.description}</h3>
+        <h3 className="font-bold capitalize flex items-center leading-none"><FaRegCalendarCheck className="me-3" />{task.description}</h3>
       )}
 
       <div className='w-2/5 flex justify-end'>
@@ -48,7 +48,7 @@ function TaskCard({ task }) {
         ) : (
           <>
             <button onClick={setEdit} type="button" className="flex items-center text-gray-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-              <FaPencilAlt className="me-3" />Editar
+              <FaPencilAlt className="sm:me-3" /><span className="hidden sm:inline-block">Editar</span>
             </button>
             <button onClick={remove} type="button" className="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600">
               <FaTrashAlt />
