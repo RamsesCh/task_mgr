@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaRegCalendarCheck, FaPencilAlt, FaTrashAlt, FaCheckCircle } from "react-icons/fa";
+import { FaRegCalendarCheck, FaPencilAlt, FaTrashAlt, FaCheckCircle, FaBan } from "react-icons/fa";
 import { useTasks } from '../context/Context.js';
 
 function TaskCard({ task }) {
@@ -38,19 +38,19 @@ function TaskCard({ task }) {
       <div className='w-2/5 flex justify-end'>
         {isEditing ? (
           <>
-            <button onClick={save} type="button" className="flex items-center text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
-              <FaCheckCircle className="me-3" />Guardar
+            <button onClick={save} type="button" className="flex items-center text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-md sm:text-sm px-4 py-1 text-center me-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+              <FaCheckCircle className="sm:me-3" /><span className="hidden sm:inline-block">Guardar</span>
             </button>
-            <button onClick={() => setIsEditing(false)} type="button" className="flex items-center text-gray-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
-              Cancelar
+            <button onClick={() => setIsEditing(false)} type="button" className="flex items-center text-gray-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md sm:text-sm px-4 py-1 text-center me-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+              <FaBan className="sm:me-3" /><span className="hidden sm:inline-block">Cancelar</span>
             </button>
           </>
         ) : (
           <>
-            <button onClick={setEdit} type="button" className="flex items-center text-gray-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+            <button onClick={setEdit} type="button" className="flex items-center text-gray-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md sm:text-sm px-4 py-1 text-center me-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
               <FaPencilAlt className="sm:me-3" /><span className="hidden sm:inline-block">Editar</span>
             </button>
-            <button onClick={remove} type="button" className="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600">
+            <button onClick={remove} type="button" className="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-md sm:text-sm px-4 py-1 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600">
               <FaTrashAlt />
             </button>
           </>
