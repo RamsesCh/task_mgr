@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const API_URL = '/api';
 
@@ -35,6 +37,9 @@ export const TaskProvider = ({ children }) => {
 
             await fetch(`${API_URL}/tasks`, config).then((res) => {
                 if (res.ok) {
+                    toast.success("Tarea agregada.", {
+                        autoClose: 2000
+                    });
                     getTasks()
                 } else {
                     res.json().then((json) => {
@@ -58,6 +63,9 @@ export const TaskProvider = ({ children }) => {
             };
             await fetch(`${API_URL}/tasks/${id}`, config).then(res => {
                 if (res.ok) {
+                    toast.success("Tarea eliminada.", {
+                        autoClose: 2000
+                    });
                     getTasks()
                 } else {
                     res.json().then((json) => {
@@ -82,6 +90,9 @@ export const TaskProvider = ({ children }) => {
             };
             await fetch(`${API_URL}/tasks/${id}`, config).then(res => {
                 if (res.ok) {
+                    toast.success("Se actualizo la tarea.", {
+                        autoClose: 2000
+                    });
                     getTasks()
                 } else {
                     res.json().then((json) => {

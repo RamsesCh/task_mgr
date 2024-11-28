@@ -1,6 +1,8 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar"; "@/components/NavBar";
 import { TaskProvider } from '../context/Context.js';
+import { ToastContainer } from 'react-toastify';
+
 
 export const metadata = {
   title: "TaskMgr",
@@ -11,8 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+      <ToastContainer/>
         <NavBar />
         <TaskProvider>
+        <ToastContainer />
           <div className="container sm:mx-0 sm:w-full md:w-3/4 md:mx-auto lg:w-1/2 xl:w-1/2 py-5">
             {children}
           </div>
